@@ -107,16 +107,19 @@ Wearable devices rely heavily on Bluetooth Low Energy (BLE), where transmitting 
 * **The Homomorphic Encryption Challenge:** HE algorithms (like Paillier) suffer from ciphertext expansion, where a single parameter expands massively in size when encrypted. 
 * **Our Solution:** By intentionally restricting the 1D-CNN to 562 parameters, the plaintext model size is roughly 0.003 MB. Even factoring in standard ciphertext expansion under HE, the resulting encrypted payload transmitted to the server remained around 0.4 MB. Given that the practical throughput of BLE 5.0 is approximately 175 KB/s, this payload falls well within the universally acceptable threshold for IoT devices (< 1 MB). It requires only 1 to 3 seconds of active radio transmission time per round, preventing connection drops and perfectly preserving the edge device's battery life.
 
+
 ## Repository Structure
 
-├── data/                       # SisFall dataset (not included in repo)
-├── results/                    # JSON files for the 4 experiments
-├── client.py                   # Flower client setup
-├── server.py                   # Custom strategy for HE aggregation and metric weighting
-├── model.py                    # 1D-CNN architecture definitions and local training loop
-├── 01_run_simulation.ipynb     # Flower simulation execution script
-├── 02_data_analysis.ipynb      # Visualizations and analysis from simulations
+```text
+.
+├── data/                   # SisFall dataset (not  included in repo)
+├── results/                # JSON files for the 4 experiments
+├── client.py               # Flower client setup
+├── server.py               # Custom strategy for HE aggregation 
+├── model.py                # 1D-CNN architecture 
+├── 01_run_simulation.ipynb # Flower simulation execution script
+├── 02_data_analysis.ipynb  # Visualizations and analysis 
+├── requirements.txt        # Python dependencies
 └── README.md
-
 
 
